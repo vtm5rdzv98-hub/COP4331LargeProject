@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/navbar";
 import Home from "./pages/home";
@@ -9,6 +10,8 @@ import Sets from "./pages/sets";
 import SetDetail from "./pages/SetDetail.tsx";
 import Flashcards from "./pages/flashcards";
 import Quiz from "./pages/quiz";
+import { getStoredTheme, applyTheme } from "./theme";
+import type { Theme } from "./theme";
 
 function App() {
     const location = useLocation();
@@ -17,9 +20,29 @@ function App() {
     const hideNavbarRoutes = ["/", "/login", "/register"];
     const showNavbar = !!user && !hideNavbarRoutes.includes(location.pathname);
 
+    const [theme, setTheme] = useState<Theme>(getStoredTheme());
+
+    function handleToggleTheme(): void {
+        const next: Theme = theme === "dark" ? "light" : "dark";
+        setTheme(next);
+    }
+
+    useEffect(() => {
+        applyTheme(theme);
+    }, [theme]);
+
     return (
         <>
-            {showNavbar && <Navbar />}
+            {showNavbar && <Navbar theme={theme} onToggleTheme={handleToggleTheme} />}
+            {!showNavbar && (
+                <button
+                    className="theme-toggle floating-theme-toggle"
+                    onClick={handleToggleTheme}
+                    aria-label="Toggle theme"
+                >
+                    {theme === "dark" ? "☀️" : "🌙"}
+                </button>
+            )}
 
             <div className="container">
                 <Routes>
