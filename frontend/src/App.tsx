@@ -1,4 +1,5 @@
 import { Routes, Route, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Navbar from "./components/navbar";
 import Home from "./pages/home";
 import Login from "./pages/login";
@@ -9,17 +10,38 @@ import Sets from "./pages/sets";
 import SetDetail from "./pages/SetDetail.tsx";
 import Flashcards from "./pages/flashcards";
 import Quiz from "./pages/quiz";
+import { applyTheme, getStoredTheme } from "./theme";
 
 function App() {
     const location = useLocation();
     const user = localStorage.getItem("user_data");
+    const [theme, setTheme] = useState<"dark" | "light">(getStoredTheme());
 
     const hideNavbarRoutes = ["/", "/login", "/register"];
     const showNavbar = !!user && !hideNavbarRoutes.includes(location.pathname);
 
+    useEffect(() => {
+        applyTheme(theme);
+    }, [theme]);
+
+    function handleToggleTheme(): void {
+        setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+    }
+
     return (
         <>
-            {showNavbar && <Navbar />}
+            {showNavbar && <Navbar theme={theme} onToggleTheme={handleToggleTheme} />}
+            {!showNavbar && (
+                <button
+                    type="button"
+                    className="theme-toggle floating-theme-toggle"
+                    onClick={handleToggleTheme}
+                    aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+                    title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+                >
+                    {theme === "dark" ? "☀️" : "🌙"}
+                </button>
+            )}
 
             <div className="container">
                 <Routes>

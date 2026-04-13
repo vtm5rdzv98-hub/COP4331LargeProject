@@ -1,6 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
 
-function Navbar() {
+type NavbarProps = {
+    theme: "dark" | "light";
+    onToggleTheme: () => void;
+};
+
+function Navbar({ theme, onToggleTheme }: NavbarProps) {
     const navigate = useNavigate();
 
     function handleLogout(): void {
@@ -17,6 +22,15 @@ function Navbar() {
                 <Link to="/sets">Study Sets</Link>
                 <Link to="/flashcards">Flashcards</Link>
                 <Link to="/quiz">Quiz</Link>
+                <button
+                    type="button"
+                    className="theme-toggle"
+                    onClick={onToggleTheme}
+                    aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+                    title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+                >
+                    {theme === "dark" ? "☀️" : "🌙"}
+                </button>
                 <button onClick={handleLogout}>Logout</button>
             </div>
         </nav>

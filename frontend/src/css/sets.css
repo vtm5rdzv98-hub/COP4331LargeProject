@@ -17,14 +17,14 @@
 .sets-header h1 {
     margin: 6px 0;
     font-size: 2.4rem;
-    color: #e2e8f5;
+    color: var(--text-heading);
     letter-spacing: -0.03em;
     font-weight: 800;
 }
 
 .sets-header p {
     margin: 0;
-    color: #7b8cad;
+    color: var(--text-sub);
 }
 
 
@@ -36,16 +36,12 @@
 
 
 .set-card {
-    background:
-            radial-gradient(ellipse at 20% 10%, rgba(79, 111, 255, 0.08) 0%, transparent 55%),
-            rgba(14, 18, 38, 0.85);
+    background: var(--sets-card-overlay), var(--card-bg);
     border-radius: 22px;
-    border: 1px solid rgba(99, 120, 255, 0.14);
+    border: 1px solid var(--card-border);
     padding: 20px;
     cursor: pointer;
-    box-shadow:
-            0 16px 40px rgba(0, 0, 20, 0.45),
-            inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    box-shadow: var(--card-shadow);
     backdrop-filter: blur(16px);
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
@@ -53,10 +49,8 @@
 
 .set-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(99, 120, 255, 0.32);
-    box-shadow:
-            0 28px 60px rgba(0, 0, 30, 0.58),
-            inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    border-color: var(--badge-border);
+    box-shadow: var(--card-hover-shadow);
 }
 
 
@@ -64,7 +58,7 @@
 /* title/description  */
 .set-card-top h3 {
     margin: 0 0 6px;
-    color: #dde3f7;
+    color: var(--text-primary);
     font-weight: 600;
     font-size: 1.05rem;
     letter-spacing: -0.01em;
@@ -72,7 +66,7 @@
 
 .set-card-top p {
     margin: 0;
-    color: #5f708a;
+    color: var(--text-muted);
     font-size: 0.9rem;
     line-height: 1.5;
 }
@@ -83,9 +77,9 @@
     display: inline-block;
     padding: 5px 12px;
     border-radius: 999px;
-    background: rgba(79, 111, 255, 0.14);
-    border: 1px solid rgba(79, 111, 255, 0.28);
-    color: #818cf8;
+    background: var(--badge-bg);
+    border: 1px solid var(--badge-border);
+    color: var(--badge-text);
     font-weight: 700;
     font-size: 0.78rem;
     letter-spacing: 0.04em;
@@ -103,20 +97,16 @@
     margin-top: 48px;
     padding: 28px;
     border-radius: 24px;
-    background:
-            radial-gradient(ellipse at 80% 0%, rgba(167, 139, 250, 0.06) 0%, transparent 55%),
-            rgba(12, 16, 34, 0.82);
-    border: 1px solid rgba(99, 120, 255, 0.14);
-    box-shadow:
-            0 24px 56px rgba(0, 0, 20, 0.5),
-            inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    background: var(--sets-create-overlay), var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    box-shadow: var(--panel-shadow);
     backdrop-filter: blur(16px);
 }
 
 /* Section heading*/
 .create-set-section h2 {
     margin: 0 0 16px;
-    color: #dde3f7;
+    color: var(--text-primary);
     font-size: 1.2rem;
     letter-spacing: -0.01em;
 }
@@ -130,7 +120,7 @@
 
 /* Label text*/
 .set-form label {
-    color: #8a97bb;
+    color: var(--text-sub);
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.07em;
@@ -141,25 +131,25 @@
 .set-form input,
 .set-form textarea {
     border-radius: 12px;
-    border: 1px solid rgba(99, 120, 255, 0.18);
-    background: rgba(8, 11, 28, 0.7);
+    border: 1px solid var(--input-border-alt);
+    background: var(--input-bg-alt);
     padding: 12px 14px;
     font-size: 0.95rem;
-    color: #dde3f7;
+    color: var(--text-primary);
     outline: none;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .set-form input::placeholder,
 .set-form textarea::placeholder {
-    color: #3c4a68;
+    color: var(--text-muted);
 }
 
 /* Focus ring */
 .set-form input:focus,
 .set-form textarea:focus {
-    border-color: rgba(99, 120, 255, 0.45);
-    box-shadow: 0 0 0 3px rgba(79, 111, 255, 0.1);
+    border-color: var(--input-focus);
+    box-shadow: var(--input-focus-shadow);
 }
 
 
@@ -173,12 +163,12 @@
     text-align: center;
     padding: 40px 30px;
     border-radius: 20px;
-    background: rgba(16, 20, 44, 0.55);
-    border: 1px dashed rgba(99, 120, 255, 0.15);
-    color: #4a5878;
+    background: var(--empty-bg);
+    border: 1px dashed var(--empty-border);
+    color: var(--empty-text);
 }
 
 .empty-card h2 {
-    color: #7b8cad;
+    color: var(--text-sub);
     margin: 0 0 8px;
 }

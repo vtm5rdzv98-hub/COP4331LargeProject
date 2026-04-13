@@ -20,7 +20,7 @@ a {
 .home-container {
     height: 100vh;
     width: 100%;
-    background-color: #0f172a;
+    background-color: var(--auth-bg);
 
     display: flex;
     align-items: center;
@@ -29,7 +29,7 @@ a {
 
 .home-content {
     text-align: center;
-    color: white;
+    color: var(--text-heading);
     max-width: 600px;
     padding: 20px;
 }
@@ -37,7 +37,7 @@ a {
 .home-title {
     font-size: 3rem;
     margin-bottom: 20px;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    text-shadow: var(--home-title-shadow);
 }
 
 .home-description {
@@ -61,8 +61,8 @@ a {
     font-size: 16px;
     cursor: pointer;
 
-    background-color: #ffffff;
-    color: #0f172a;
+    background-color: var(--home-primary-btn-bg);
+    color: var(--home-primary-btn-text);
 
     transition: 0.2s ease;
 }
@@ -73,8 +73,8 @@ a {
 
 .home-btn.secondary {
     background-color: transparent;
-    border: 2px solid white;
-    color: white;
+    border: 2px solid var(--home-secondary-btn-border);
+    color: var(--home-secondary-btn-text);
 }
 
 
@@ -83,7 +83,7 @@ a {
 .auth-page {
     min-height: 100vh;
     width: 100%;
-    background-color: #0f172a;
+    background-color: var(--auth-bg);
 }
 
 .overlay {
@@ -98,7 +98,7 @@ a {
 .loginbox {
     width: min(380px, 92vw);
     padding: 42px 34px 34px;
-    background: rgba(43, 47, 93, 0.55);
+    background: var(--auth-box-bg);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     border-radius: 46px;
@@ -107,15 +107,15 @@ a {
     flex-direction: column;
     align-items: center;
     gap: 18px;
-    color: white;
-    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-heading);
+    box-shadow: var(--auth-box-shadow);
+    border: var(--auth-box-border);
 }
 
 .formTitle {
     font-size: 28px;
     letter-spacing: 0.5px;
-    text-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+    text-shadow: var(--form-title-shadow);
 }
 
 .form {
@@ -132,9 +132,9 @@ a {
     width: 44px;
     height: 44px;
     border: none;
-    background: rgba(255, 255, 255, 0.12);
+    background: var(--back-btn-bg);
     border-radius: 50%;
-    color: white;
+    color: var(--text-heading);
     font-size: 22px;
     display: flex;
     align-items: center;
@@ -145,7 +145,7 @@ a {
 
 .backBtn:hover {
     transform: translateY(-1px) scale(1.05);
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--back-btn-hover);
 }
 
 .field {
@@ -163,20 +163,20 @@ a {
     width: 100%;
     padding: 12px 14px;
     border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: var(--login-field-border);
     outline: none;
-    background: rgba(0, 0, 0, 0.22);
-    color: white;
+    background: var(--login-field-bg);
+    color: var(--login-field-text);
     font-size: 15px;
 }
 
 .loginfield::placeholder {
-    color: rgba(255, 255, 255, 0.65);
+    color: var(--login-field-placeholder);
 }
 
 .loginfield:focus {
-    border-color: rgba(255, 255, 255, 0.45);
-    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+    border-color: var(--input-focus);
+    box-shadow: var(--input-focus-shadow);
 }
 
 .btn {
@@ -190,8 +190,8 @@ a {
 }
 
 .primaryBtn {
-    background: rgba(255, 255, 255, 0.92);
-    color: #2b2b2b;
+    background: var(--auth-primary-btn-bg);
+    color: var(--auth-primary-btn-text);
 }
 
 .btn:hover {
@@ -206,10 +206,10 @@ a {
 }
 
 .linkBtn {
-    color: #08eaf3;
+    color: var(--link-accent);
     font-weight: bold;
     text-decoration: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+    border-bottom: 1px solid var(--input-border);
     padding-bottom: 2px;
 }
 .forgotText {
@@ -220,7 +220,7 @@ a {
 }
 
 .linkBtn:hover {
-    border-bottom-color: rgba(255, 255, 255, 0.9);
+    border-bottom-color: var(--link-accent);
 }
 
 .status {
